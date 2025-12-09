@@ -1,0 +1,44 @@
+Difference between Sleep and Wait Method:
+
+Sleep():
+
+The sleep() method is a static method of the Thread class and is used to pause the execution of the current thread for a specified period.
+It can be called in any part of the class simultaneously without any conflicts.Throws InterruptedException if another thread interrupts during sleep.
+
+It is not recommended in java, because it makes the element wait even it is ready earlier,leading to inefficient test execution.
+
+Syntax:
+
+Thread.sleep(5000);
+-----------------------------------------------------------------------------------------------
+
+Implicit Wait and Explicit Wait() Statement:
+
+These statements are used to make the execution wait.It sets a default timeout for all findelements and findelementcalls.It is applied globally to webdriver instance.
+
+
+Implicit:
+----------
+
+The Implicit Wait in Selenium is used to tell the web driver to wait for a certain amount of time before it throws a “No Such Element Exception”. The default setting is 0. Once we set the time, the web driver will wait for the element for that time before throwing an exception.
+
+syntax:
+
+driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
+
+
+Explicit:
+---------
+The Explicit Wait in Selenium is used to tell the Web Driver to wait for certain conditions (Expected Conditions) or maximum time exceeded before throwing “ElementNotVisibleException” exception. 
+
+You can wait for any element to be present,visible,clickable or for an alert to appear
+
+
+Syntax:
+
+WebDriverWait wait=new WebDriverWait(driver, 20);
+
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath( "div/div/a/i")));
+
+
+
